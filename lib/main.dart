@@ -34,7 +34,6 @@ class _CalculatorState extends State<Calculator> {
       } else if (buttonText == "√") {
         _output = math.sqrt(double.parse(_output)).toString();
       } else if (buttonText == "^") {
-        // Assuming that "^" is used for exponentiation
         _output = _output + "^";
       } else {
         if (_output == "0") {
@@ -49,7 +48,6 @@ class _CalculatorState extends State<Calculator> {
   String _calculate() {
     List<String> operations = _output.split(RegExp(r'[-+×÷]'));
 
-    // Extract operators
     List<String> operators = [];
     for (String operation in _output.split(RegExp(r'[0-9.]'))) {
       if (operation.isNotEmpty) {
@@ -86,7 +84,6 @@ class _CalculatorState extends State<Calculator> {
 
   @override
   Widget build(BuildContext context) {
-    // Implement your UI here
     return Scaffold(
       appBar: AppBar(
         title: Text('Kalkulator'),
@@ -151,8 +148,8 @@ class _CalculatorState extends State<Calculator> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _buildButton("√"), // Square root button
-              _buildButton("^"), // Exponentiation button
+              _buildButton("√"), 
+              _buildButton("^"), 
             ],
           ),
         ],
